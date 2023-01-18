@@ -1,6 +1,11 @@
 import saveAddress from "./saveAddress.js";
 
 export default function showModal(input, response){
+
+    console.log(response);
+
+
+
         const modalItem = document.getElementById('Modal');
 
 
@@ -79,13 +84,33 @@ export default function showModal(input, response){
         
         const saveBtn = document.getElementById("save");
         saveBtn.addEventListener("click", () => {
-
+            let address = {}; 
 
             if(saveOriginal){
                 saveAddress(input)
                 return; 
             }
-            saveAddress(response)
+
+            address.city = response.City;
+            address.state = response.State; 
+            address.zip = response.Zip
+
+            if(response.Address_Line_1){
+                address.address = response.Address_Line_1;
+            }
+            else{
+                address.address = "";
+            }
+            if(response.Address_Line_2){
+                address.address2 = response.Address_Line_2;
+                
+            }
+            else {
+                address.address2 = "";
+            }
+
+
+            saveAddress(address)
         })
 
         // add an event  listener to display informations about the address that the user entred
