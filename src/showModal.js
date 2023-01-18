@@ -8,21 +8,24 @@ export default function showModal(input, response){
 
         const modalItem = document.getElementById('Modal');
 
-        const standardizedAddress=
-        `
-        <div  id="standardizedIndormations"  class="p-1 d-none border font-monospace opacity-75 mb-4"> 
-            Adress Line 1: ${response.address} <br>
-            Adress Line 2: ${response.address2} <br>
-            State: ${response.state} <br>
-            City: ${response.city} <br>
-            Zip Code: ${response.zip}
-        </div>
-        `
+
+        let standardizedAddress = '<div  id="standardizedIndormations"  class="p-1 d-none border font-monospace opacity-75 mb-4">'
+
+        for(let label in response){
+            let value = response[label];
+            label = label.replaceAll("_", " ");
+            standardizedAddress += `<div>${label}: ${ value } </div>`; 
+
+        }
+        standardizedAddress += "</div>"
+
+
+
         const originalAddress=
         `
         <div id="originalInformations" class=" p-1 border font-monospace opacity-75 mb-4"> 
-            Adress Line 1: ${input.address} <br>
-            Adress Line 2: ${input.address2} <br>
+            Address Line 1: ${input.address} <br>
+            Address Line 2: ${input.address2} <br>
             State: ${input.state} <br>
             City: ${input.city} <br>
             Zip Code: ${input.zip}
