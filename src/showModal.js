@@ -1,11 +1,6 @@
 import saveAddress from "./saveAddress.js";
 
 export default function showModal(input, response){
-
-    console.log(response);
-
-
-
         const modalItem = document.getElementById('Modal');
 
 
