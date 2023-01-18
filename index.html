@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+      integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./src/main.js" defer></script>
+    <title>Mail Validation</title>
+  </head>
+  <body class="bg-light">
+    <div class="container">
+      <div id="error" class=" d-none alert alert-danger mt-2 mx-auto w-50" role="alert">
+      </div>
+      <div class="row bg-white shadow rounded p-4 mx-auto mt-1 w-50" >
+
+          <p class="fw-bold">
+            Address Validator
+            <br>
+            <span class=" opacity-50">Validate/Standardizes addresses using USPS</span>
+          </p>
+      <hr>
+      <form name="mailingForm">
+        <div class="form-group">
+          <label for="inputAddress" class="text-secondary">Address Line 1</label>
+          <input
+            name="address"
+            type="text"
+            class="form-control my-2"
+            id="inputAddress"
+            placeholder="1234 Main St"
+            required
+            value="Suite 6100"
+          />
+        </div>
+        <div class="form-group">
+          <label for="inputAddress2" class="text-secondary">Address Line 2</label>
+          <input
+            name="address2"
+            type="text"
+            class="form-control my-2"
+            id="inputAddress2"
+            placeholder="Apartment, studio, or floor"
+            value="185 Berry St"
+          />
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inputCity" class="text-secondary">City</label>
+            <input type="text" name="city" id="inputCity" class="form-control my-2" value="San Francisco">
+          </div>
+          <div class="form-group">
+            <label for="inputState" class="text-secondary">State</label>
+            <select name="state" id="inputState" class="form-select my-2">
+              <option value="..." selected>Select</option>
+              <option value="AL">Alabama</option>
+              <option value="AK">Alaska</option>
+              <option value="AZ">Arizona</option>
+              <option value="AR">Arkansas</option>
+              <option value="CA">California</option>
+              <option value="CO">Colorado</option>
+              <option value="CT">Connecticut</option>
+              <option value="DE">Delaware</option>
+              <option value="DC">District Of Columbia</option>
+              <option value="FL">Florida</option>
+              <option value="GA">Georgia</option>
+              <option value="HI">Hawaii</option>
+              <option value="ID">Idaho</option>
+              <option value="IL">Illinois</option>
+              <option value="IN">Indiana</option>
+              <option value="IA">Iowa</option>
+              <option value="KS">Kansas</option>
+              <option value="KY">Kentucky</option>
+              <option value="LA">Louisiana</option>
+              <option value="ME">Maine</option>
+              <option value="MD">Maryland</option>
+              <option value="MA">Massachusetts</option>
+              <option value="MI">Michigan</option>
+              <option value="MN">Minnesota</option>
+              <option value="MS">Mississippi</option>
+              <option value="MO">Missouri</option>
+              <option value="MT">Montana</option>
+              <option value="NE">Nebraska</option>
+              <option value="NV">Nevada</option>
+              <option value="NH">New Hampshire</option>
+              <option value="NJ">New Jersey</option>
+              <option value="NM">New Mexico</option>
+              <option value="NY">New York</option>
+              <option value="NC">North Carolina</option>
+              <option value="ND">North Dakota</option>
+              <option value="OH">Ohio</option>
+              <option value="OK">Oklahoma</option>
+              <option value="OR">Oregon</option>
+              <option value="PA">Pennsylvania</option>
+              <option value="RI">Rhode Island</option>
+              <option value="SC">South Carolina</option>
+              <option value="SD">South Dakota</option>
+              <option value="TN">Tennessee</option>
+              <option value="TX">Texas</option>
+              <option value="UT">Utah</option>
+              <option value="VT">Vermont</option>
+              <option value="VA">Virginia</option>
+              <option value="WA">Washington</option>
+              <option value="WV">West Virginia</option>
+              <option value="WI">Wisconsin</option>
+              <option value="WY">Wyoming</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="inputZip" class="text-secondary">Zip</label>
+            <input name="zip" type="text" class="form-control mt-2" id="inputZip"required value="94556"/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-4" style="display:block;width: 7rem; margin: 0 auto">Validate</button>
+      </form>
+    </div>
+
+
+      <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      aria-labelledby="ModalLabel"
+      aria-hidden="true"
+    >
+    </div>
+</div>
+
+  </body>
+</html>
+
